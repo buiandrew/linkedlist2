@@ -13,6 +13,9 @@ struct LinkedList
   Node* head;
   Node* tail;
 
+  /* Destructor */
+  ~LinkedList() { clear(); }
+
   /* Member Functions */
   bool empty();
   // Returns 1 for an empty list, 0 for a non empty list.
@@ -60,5 +63,4 @@ struct LinkedList
 
   void printList();
   // Prints the LinkedList.
-
 };

@@ -134,6 +134,37 @@ bool LinkedList::contains( int value )
   return false;
 }
 
+void LinkedList::removeDuplicates()
+{
+  if ( head->data == head->next->data ) {
+    decapitate();
+  }
+  Node* node = head; // get first node
+  unsigned int len = length();
+  while ( node->next != tail )
+  {
+    while ( node->data == node->next->data ) {
+      Node* tmp = node->next;
+      node->next = tmp->next;
+      delete tmp;
+    }
+    int value = node->data;
+    Node* n = head;
+    while ( n->next != tail) {
+      if ( value == n->next->data ) {
+	if ( n != tail ) {
+	  Node* tmp = n->next;
+	  n->next = tmp->next;
+	  delete tmp;
+	}
+      }
+      if ( n != tail )
+	n = n->next;
+    }
+    node = node->next;
+  }
+}
+
 void LinkedList::printList()
 {
   if ( empty() )

@@ -5,7 +5,7 @@ struct Node
   /* Nodes are "dumb" and have no member functions */
   int data;
   Node* next;
-};
+}
 
 struct LinkedList
 {
@@ -61,4 +61,4 @@ struct LinkedList
   void printList();
   // Prints the LinkedList.
 
-};
+}
